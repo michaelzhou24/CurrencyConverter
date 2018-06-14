@@ -9,14 +9,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CurrencyParser {
-    private String fileName;
     private String date;
     private long timeStamp;
     private Map<String, Double> currencies;
 
     public CurrencyParser() {
         currencies = new HashMap<String, Double>();
-        fileName = "Currency.json";
         timeStamp = 0;
         date = "";
         parse();
@@ -64,28 +62,3 @@ public class CurrencyParser {
     }
 
 }
-
-/*
-public void parseRoutes(String jsonResponse) throws JSONException, RouteDataMissingException {
-        JSONArray routeLibrary = new JSONArray(jsonResponse);
-
-        for (int index = 0; index < routeLibrary.length(); index++) {
-            JSONObject route = routeLibrary.getJSONObject(index);
-            if (!route.has("Patterns") || !route.has("RouteNo") || !route.has("Name")) {
-                throw new RouteDataMissingException();
-            }
-            String number = route.getString("RouteNo");
-            String name = route.getString("Name");
-            Route newRoute = RouteManager.getInstance().getRouteWithNumber(number, name);
-
-            JSONArray patterns = route.getJSONArray("Patterns"); // Get patterns from Route
-            for (int i = 0; i < patterns.length(); i++) {
-                JSONObject pattern = patterns.getJSONObject(i);
-                String destination = pattern.getString("Destination");
-                String direction = pattern.getString("Direction");
-                String patternNo = pattern.getString("PatternNo");
-                newRoute.getPattern(patternNo, destination, direction);
-            }
-        }
-    }
-*/
